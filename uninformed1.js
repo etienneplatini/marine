@@ -138,18 +138,14 @@ function transform(state){
                 newState[1].push(newState[0][i]);
                 newState[1].push(newState[0][j]);
 
-                if(i > j){
-                    newState[0].splice(i, 1);
-                    newState[0].splice(j, 1);
-                }
-                else{
-                    newState[0].splice(j, 1);
-                    newState[0].splice(i, 1);
-                }
+                // On s'assure que on bouge toujours l'indice le plus haut en premier,
+                newState[0].splice(j, 1);
+                newState[0].splice(i, 1);
 
 
-                // Puis, si on a pas terminé, on ramène 1 bateau afin de servir d'escorte pour les prochains
-                if(newState[0].length != 0){
+
+                // Puis, si on a pas l'état final, on ramène 1 bateau afin de servir d'escorte pour les prochains
+                if(!(isTarget(newState))){
                     for(k=0; k < newState[1].length; k++){
 
                         buffFinalState = clone(newState);
@@ -160,14 +156,17 @@ function transform(state){
                         buffFinalState[1].splice(k, 1);
 
 
-                        // On vérifie si newState est dans visited
-
+                        // On vérifie si il existe deja un chemin plus rapide ou aussi rapide dans visited avant de l'y ajouter
                         if(!(isVisited(buffFinalState))){
                             ArrNewStates.push(clone(buffFinalState));
                         }
                     }
                 }
-                ArrNewStates.push(clone(newState));
+                // Si on a l'état final, on le retourne et il sera traité par l'algorithme
+                else{
+                    ArrNewStates.push(clone(newState));
+                }
+
             }
         }
     }
