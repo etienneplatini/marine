@@ -82,6 +82,26 @@ function h_cost(state) {
 
 }
 
+// Fonction permettant de faire des copies profondes en javascript
+function clone(obj){
+    try{
+        var copy = JSON.parse(JSON.stringify(obj));
+    } catch(ex){
+        console.log("Vous utilisez un compilateur / navigateur super vieux");
+    }
+    return copy;
+}
+
+// Fonction evaluant si l'etat est la cible
+function isTarget(state){
+    if(state[1].length == NBBOATS){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 // Fonction retournant un tableau contenant tous les voisins
 function transform(state) {
 
@@ -141,7 +161,7 @@ function transform(state) {
 // #########  Approche informée - Algorithme A*  ######### //
 
 while (currentState[1].length() <= 4) {
-    neighboursStates = transform(currentState);
+    neighboursStates = clone(transform(currentState));
     for (let i = 0; i < neighboursStates.length(); i++) {
         for (let j = 0; j < closed.length(); i++) {
             if (neighboursStates[i] == closed[j]) { //Faire une fonction isEqual
@@ -153,7 +173,7 @@ while (currentState[1].length() <= 4) {
         for (let j = 0; j < opened.length(); i++) {
             if (neighboursStates[i] == opened[j]) { //Faire une fonction isEqual
                 //Si un noeud voisin est déjà dans la liste ouverte et que son coût(f+h) est meilleur, on le met à jour
-                opened[j] = neighboursStates [i];
+                opened[j] = clone(neighboursStates [i]);
             }
             else {
                 opened.push(neighboursStates[i]); //Sinon, on l'y pousse
@@ -162,8 +182,9 @@ while (currentState[1].length() <= 4) {
     }
     if (opened != null) {
         //On cherche l'état avec le plus faible coût total dans la liste ouverte, on le place dans le tableau des états fermés et on le met dans l'état courant
-        closed.push = currentState = opened[iMinTab(opened)];
-        //On retire l'état des états ouverts.
+        currentState = clone(opened[iMinTab(opened)]);
+        closed.push(currentState);
+            //On retire l'état des états ouverts.
         opened.splice(iMinTab(opened), 1);
     }
     else {
