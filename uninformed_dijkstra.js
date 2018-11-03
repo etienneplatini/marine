@@ -1,20 +1,25 @@
+////////// INITIALISATION DU CHRONOMETRE \\\\\\\\\\
+console.time("timer");
+
 ////////// VARIABLES \\\\\\\\\\
 
-const NBBOATS = 4;
+const NBBOATS = 5;
 
 // Representation
 let XC21 = {};
 let XC56 = {};
 let XC100 = {};
 let XC800 = {};
+let XC1000 = {};
 XC21.speed = 45;
 XC56.speed = 90;
 XC100.speed = 255;
 XC800.speed = 360;
+XC1000.speed = 500;
 
 // Etat actuel est initialisé à l'état source
 let currentState = {};
-currentState[0] = [XC21, XC56, XC100, XC800];
+currentState[0] = [XC21, XC56, XC100, XC800, XC1000];
 currentState[1] = [];
 currentState.cost = 0;
 currentState.previous = null;
@@ -193,6 +198,7 @@ while(queue.length > 0){
         let path = returnPath(currentState);
         console.log(path);
         console.log(currentState.cost);
+        console.timeEnd("timer");
         break;
     }
 
