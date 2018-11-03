@@ -144,7 +144,7 @@ function transform(state){
             newState = clone(currentState);
             newState.previous = currentState;
 
-            newState.gCost = Math.max(newState[0][i].speed, newState[0][j].speed) + currentState.cost;
+            newState.gCost = Math.max(newState[0][i].speed, newState[0][j].speed) + currentState.gCost;
 
             newState[1].push(newState[0][i]);
             newState[1].push(newState[0][j]);
@@ -205,12 +205,12 @@ while(queue.length > 0){
 
     // On ajoute les états suivants découverts à la queue, et on la trie par cout des états
     queue = concatenate(queue, nextStates);
-    queue.sort(function(a, b){return a.fcost - b.fcost});
+    queue.sort(function(a, b){return a.fCost - b.fCost});
 
     if(isTarget(currentState)){
         let path = returnPath(currentState);
         console.log(path);
-        console.log(currentState.cost);
+        console.log(currentState.gCost);
         console.timeEnd("timer");
         break;
     }
