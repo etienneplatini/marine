@@ -138,13 +138,13 @@ function transform(state){
     let buffFinalState = {};
 
     // Premièrement, on bouge 2 bateaux vers la destination
-    for(i=0; i < currentState[0].length; i++){
+    for(i=0; i < state[0].length; i++){
         // On ne déplace pas 2 fois le même bateau, et on ne déplace pas 2 fois le même set de bateaux
-        for(j=i+1; j < currentState[0].length; j++){
-            newState = clone(currentState);
-            newState.previous = currentState;
+        for(j=i+1; j < state[0].length; j++){
+            newState = clone(state);
+            newState.previous = state;
 
-            newState.cost = Math.max(newState[0][i].speed, newState[0][j].speed) + currentState.cost;
+            newState.cost = Math.max(newState[0][i].speed, newState[0][j].speed) + state.cost;
 
             newState[1].push(newState[0][i]);
             newState[1].push(newState[0][j]);
