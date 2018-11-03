@@ -3,7 +3,7 @@ console.time("timer");
 
 ////////// VARIABLES \\\\\\\\\\
 
-const NBBOATS = 5;
+const NBBOATS = 4;
 
 // Representation
 let XC21 = {};
@@ -19,7 +19,7 @@ XC1000.speed = 500;
 
 // Etat actuel est initialisé à l'état source
 let currentState = {};
-currentState[0] = [XC21, XC56, XC100, XC800, XC1000];
+currentState[0] = [XC21, XC56, XC100, XC800];
 currentState[1] = [];
 currentState.cost = 0;
 currentState.previous = null;
