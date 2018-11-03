@@ -1,5 +1,5 @@
 ////////// INITIALISATION DU CHRONOMETRE \\\\\\\\\\
-console.time("timer");
+console.time("Temps écoulé ");
 
 ////////// VARIABLES \\\\\\\\\\
 
@@ -227,9 +227,10 @@ while(queue.length > 0){
 
     if(isTarget(currentState)){
         let path = returnPath(currentState);
+        console.log("Déplacements des batiments :");
         console.log(path);
-        console.log(currentState.gCost);
-        console.timeEnd("timer");
+        console.log("Durée du déplacement : " + currentState.gCost + "mn");
+        console.timeEnd("Temps écoulé ");
         break;
     }
 
