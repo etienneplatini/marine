@@ -11,11 +11,13 @@ let XC56 = {};
 let XC100 = {};
 let XC800 = {};
 let XC1000 = {};
+let XC2000 = {};
 XC21.speed = 45;
 XC56.speed = 90;
 XC100.speed = 255;
 XC800.speed = 360;
 XC1000.speed = 500;
+XC2000.speed = 780;
 
 // Etat actuel est initialisé à l'état source
 let currentState = {};

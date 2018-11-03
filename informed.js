@@ -11,11 +11,13 @@ let XC56 = {};
 let XC100 = {};
 let XC800 = {};
 let XC1000 = {};
+let XC2000 = {};
 XC21.speed = 45;
 XC56.speed = 90;
 XC100.speed = 255;
 XC800.speed = 360;
 XC1000.speed = 500;
+XC2000.speed = 780;
 
 // Etat actuel est initialisé à l'état source
 let currentState = {};
@@ -187,7 +189,23 @@ function transform(state){
 
 // Fonction heuristique
 function h(state){
-    let hCost = state[0].length;
+    let hCost = 0;
+
+    if(state[0].length > 0){
+        let arrSpeed = [];
+
+        for(let i = 0; i < state[0].length; i++){
+            arrSpeed[i] = state[0][i].speed;
+
+        }
+
+        hCost = Math.max(...arrSpeed);
+        return hCost;
+
+    }
+    else{
+        return hCost;
+    }
 
     return hCost;
 
