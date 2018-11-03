@@ -1,37 +1,6 @@
 ////////// INITIALISATION DU CHRONOMETRE \\\\\\\\\\
 console.time("Temps écoulé ");
 
-////////// VARIABLES \\\\\\\\\\
-
-const NBBOATS = 4;
-
-// Representation
-let XC21 = {};
-let XC56 = {};
-let XC100 = {};
-let XC800 = {};
-let XC1000 = {};
-let XC2000 = {};
-XC21.speed = 45;
-XC56.speed = 90;
-XC100.speed = 255;
-XC800.speed = 360;
-XC1000.speed = 500;
-XC2000.speed = 780;
-
-// Etat actuel est initialisé à l'état source
-let currentState = {};
-currentState[0] = [XC21, XC56, XC100, XC800];
-currentState[1] = [];
-currentState.gCost = 0;
-currentState.hCost = 0;
-currentState.fCost = 0;
-currentState.previous = null;
-
-// Autres variables
-let visited = [];
-let queue = [currentState];
-let nextStates = [];
 
 ////////// FONCTIONS \\\\\\\\\\
 
@@ -211,9 +180,41 @@ function h(state){
 
 }
 
+
+////////// VARIABLES \\\\\\\\\\
+
+const NBBOATS = 4;
+
+// Representation
+let XC21 = {};
+let XC56 = {};
+let XC100 = {};
+let XC800 = {};
+let XC1000 = {};
+let XC2000 = {};
+XC21.speed = 45;
+XC56.speed = 90;
+XC100.speed = 255;
+XC800.speed = 360;
+XC1000.speed = 500;
+XC2000.speed = 780;
+
+// Etat actuel initialisé à l'état source
+let currentState = {};
+currentState[0] = [XC21, XC56, XC100, XC800];
+currentState[1] = [];
+currentState.gCost = 0;
+currentState.hCost = 0;
+currentState.fCost = 0;
+currentState.previous = null;
+
+// Autres variables
+let visited = [];
+let queue = [currentState];
+let nextStates = [];
+
+
 //////////     MAIN     \\\\\\\\\\
-
-
 
 while(queue.length > 0){
 
