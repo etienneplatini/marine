@@ -74,10 +74,14 @@ function represent(state){
     for (let i = 0; i < state[0].length; i++ ) {
         name += state[0][i].speed + " ";
     }
+
     name += "\n-----\n";
+
     for ( i = 0; i < state[1].length; i++ ) {
         name += state[1][i].speed + " ";
     }
+
+    name += state.movedBack;
     name += "\n";
 
     return name;
@@ -130,6 +134,9 @@ function transform(state){
 
                     buffFinalState = clone(newState);
 
+                    // On récupère le nom du bateau qui a été ramené avec l'escorte
+                    buffFinalState.movedBack = "(" + buffFinalState[1][k].speed + ")";
+
                     buffFinalState.cost += buffFinalState[1][k].speed;
 
                     buffFinalState[0].push(buffFinalState[1][k]);
@@ -143,7 +150,9 @@ function transform(state){
             }
             // Si on a l'état final, on le retourne et il sera traité par l'algorithme
             else{
+                newState.movedBack = "";
                 ArrNewStates.push(clone(newState));
+
             }
 
         }
@@ -177,6 +186,7 @@ currentState[0] = [XC21, XC56, XC100, XC800];
 currentState[1] = [];
 currentState.cost = 0;
 currentState.previous = null;
+currentState.movedBack = "";
 
 // Autres variables
 let visited = [];

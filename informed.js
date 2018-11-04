@@ -78,6 +78,7 @@ function represent(state){
     for ( i = 0; i < state[1].length; i++ ) {
         name += state[1][i].speed + " ";
     }
+    name += state.movedBack;
     name += "\n";
 
     return name;
@@ -130,6 +131,8 @@ function transform(state){
 
                     buffNewState = clone(newState);
 
+                    buffNewState.movedBack = "(" + buffNewState[1][k].speed + ")";
+
                     buffNewState.gCost += buffNewState[1][k].speed;
 
                     buffNewState[0].push(buffNewState[1][k]);
@@ -147,6 +150,7 @@ function transform(state){
             else{
                 newState.hCost = h(newState);
                 newState.fCost = newState.gCost + newState.hCost;
+                newState.movedBack = "";
                 ArrNewStates.push(clone(newState));
             }
 
@@ -175,9 +179,6 @@ function h(state){
     else{
         return hCost;
     }
-
-    return hCost;
-
 }
 
 
@@ -207,6 +208,7 @@ currentState.gCost = 0;
 currentState.hCost = 0;
 currentState.fCost = 0;
 currentState.previous = null;
+currentState.movedBack = "";
 
 // Autres variables
 let visited = [];
