@@ -4,7 +4,7 @@ console.time("Temps d'exécution ");
 
 ////////// FONCTIONS \\\\\\\\\\
 
-// Fonction permettant de faire des copies profondes en javascript
+// Fonction permettant de faire des copies   profondes en javascript
 function clone(obj){
     let copy;
 
@@ -19,17 +19,6 @@ function clone(obj){
 // Fonction evaluant si l'etat est la cible
 function isTarget(state){
     return state[1].length === NBBOATS;
-}
-
-// Fonction de concatenation de tableaux
-function concatenate(arr1, arr2){
-
-    let arrReturn = clone(arr1);
-
-    for(let i=0; i < arr2.length; i++){
-        arrReturn.push(arr2[i]);
-    }
-    return arrReturn;
 }
 
 // Fonction renvoyant vrai si state2 à la même disposition que state1 et un cout supérieur ou égal
@@ -223,7 +212,7 @@ while(queue.length > 0){
     nextStates = transform(currentState);
 
     // On ajoute les états suivants découverts à la queue, et on la trie par cout des états
-    queue = concatenate(queue, nextStates);
+    queue = queue.concat(nextStates);
     queue.sort(function(a, b){return a.fCost - b.fCost});
 
     if(isTarget(currentState)){

@@ -20,17 +20,6 @@ function isTarget(state){
     return state[1].length === NBBOATS;
 }
 
-// Fonction de concatenation de tableaux
-function concatenate(arr1, arr2){
-
-    let arrReturn = clone(arr1);
-
-    for(let i=0; i < arr2.length; i++){
-        arrReturn.push(arr2[i]);
-    }
-    return arrReturn;
-}
-
 // Fonction renvoyant vrai si state2 à la même disposition que state1 et un cout supérieur ou égal
 // Cela permet de savoir si on devrai le rajouter à la queue ou pas
 function isEqualAndSlower(state1, state2){
@@ -156,7 +145,7 @@ function transform(state){
 
 ////////// VARIABLES \\\\\\\\\\
 
-const NBBOATS = 4;
+const NBBOATS = 6;
 
 // Representation
 let XC21 = {};
@@ -174,7 +163,7 @@ XC2000.speed = 780;
 
 // Etat actuel initialisé à l'état source
 let currentState = {};
-currentState[0] = [XC21, XC56, XC100 ,XC800];
+currentState[0] = [XC21, XC56, XC100 ,XC800, XC1000, XC2000];
 currentState[1] = [];
 currentState.cost = 0;
 currentState.previous = null;
@@ -195,7 +184,7 @@ while(queue.length > 0){
     nextStates = transform(currentState);
 
     // On ajoute les états suivants découverts à la queue, et on la trie par cout des états
-    queue = concatenate(queue, nextStates);
+    queue = queue.concat(nextStates);
     queue.sort(function(a, b){return a.cost - b.cost});
 
     if(isTarget(currentState)){
