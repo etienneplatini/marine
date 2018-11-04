@@ -6,8 +6,10 @@ console.time("Temps écoulé ");
 
 // Fonction permettant de faire des copies profondes en javascript
 function clone(obj){
+    let copy;
+
     try{
-        var copy = JSON.parse(JSON.stringify(obj));
+        copy = JSON.parse(JSON.stringify(obj));
     } catch(ex){
         console.log("Vous utilisez un compilateur / navigateur super vieux");
     }
@@ -16,18 +18,13 @@ function clone(obj){
 
 // Fonction evaluant si l'etat est la cible
 function isTarget(state){
-    if(state[1].length == NBBOATS){
-        return true;
-    }
-    else{
-        return false;
-    }
+    return state[1].length === NBBOATS;
 }
 
 // Fonction de concatenation de tableaux
 function concatenate(arr1, arr2){
 
-    arrReturn = clone(arr1);
+    let arrReturn = clone(arr1);
 
     for(let i=0; i < arr2.length; i++){
         arrReturn.push(arr2[i]);
@@ -69,9 +66,10 @@ function isVisited(state){
 
 // Fonction de représentation graphique d'un état
 function represent(state){
-
     let name = "\n";
-    for (let i = 0; i < state[0].length; i++ ) {
+    let i;
+
+    for (i = 0; i < state[0].length; i++ ) {
         name += state[0][i].speed + " ";
     }
     name += "\n-----\n";
