@@ -12,49 +12,63 @@ XC800.speed = 360;
 
 let currentState = {};
 currentState.cost = 0;
-currentState.heuristic = 0;
 currentState.previous = null;
-currentState[0] = {XC21, XC56, XC100, XC800};
-currentState[1] = {};
-currentState.name = "epart";
+currentState[0] = [XC21, XC56, XC100, XC800];
+currentState[1] = [];
+currentState.name = "depart";
 
 var opened = [];
 var closed = [];
-let bestNode;
 
 let neighboursStates = [];
 
-// // Fonction de représentation graphique d'un état
-// function represent(state) {
-//
-//     let name = "\n";
-//     for (let i = 0; i < state[0].length; i++) {
-//         name += state[0][i].speed + " ";
-//     }
-//     name += "\n-----\n";
-//     for (i = 0; i < state[1].length; i++) {
-//         name += state[1][i].speed + " ";
-//     }
-//     name += "\n";
-//
-//     return name;
-//
-// }
 
-function iMinTab(tab) {
-    for (let i = 0; i < tab.length(); i++) {
-        let min = 999999999;
-        let iMin = null;
-        if (tab[i].cost < min) {
-            iMin = i;
+//Fonction pour trouver le minimum d'un tableau.
+function iMinTab(tab,indice) {
+    let min = 999999999;
+    let iMin = null;
+
+    if (typeof indice !== "undefined") {
+        for (let i = 0; i < tab.length; i++) {
+            if (tab[indice][i].speed < min) {
+                iMin = i;
+            }
+
+        }
+    }
+    else{
+        for (let i = 0; i < tab.length; i++) {
+            if (tab[i].cost < min) {
+                iMin = i;
+            }
+
         }
     }
     return iMin;
 }
 
+function isEqual(state1, state2){
+    let i;
+    let sum1 = 0;
+    let sum2 = 0;
+
+    // Si le cout du premier tableau des deux états est le même, la disposition est identique
+    for(i = 0; i < state1[0]; i++ ){
+        sum1 += state1[0][i].speed;
+    }
+    for(i = 0; i < state2[0]; i++ ){
+        sum2 += state2[0][i].speed;
+    }
+
+    // Si les dispositions sont identiques et le cout de state2 supérieur ou égal, on retourne vrai
+    return sum1 === sum2 && state2.cost == state1.cost;
+
+}
+
+// Renseigner la variable nommage permet l'affichage.
 function represent(state, nommage) {
-    if (nommage != null) {
-        let name = "";
+    var name="";
+    if (typeof nommage !== "undefined") {
         for (let i = 0; i < state[0].length; i++) {
             name += state[0][i].speed + " ";
         }
@@ -64,7 +78,7 @@ function represent(state, nommage) {
         }
     }
     else {
-        let name = "\n";
+        var name = "\n";
         for (let i = 0; i < state[0].length; i++) {
             name += state[0][i].speed + " ";
         }
@@ -78,10 +92,16 @@ function represent(state, nommage) {
 
 }
 
+/*  On définit la fonction heuristique d'un état comme étant la somme des coûts ddes bâteaux restant à transporter
+    plus le produit du nombre de bateaux restants et du coût du bateau le plus rapide*/
 function h_cost(state) {
-
+    let cost =0;
+    for (let i=0; i< state[0].length;i++){
+        cost+=state[0][i].speed
+    }
+    //Le coût de chaque bateau à amener plus le coût du bateau d'escorte. On prendra ici le plus rapide.
+    return cost+ iMinTab(state,0)*NBBOATS;
 }
-
 // Fonction permettant de faire des copies profondes en javascript
 function clone(obj){
     try{
@@ -103,7 +123,7 @@ function isTarget(state){
 }
 
 // Fonction retournant un tableau contenant tous les voisins
-function transform(state) {
+function transform(currentState) {
 
     let i;
     let j;
@@ -117,10 +137,11 @@ function transform(state) {
     // Premièrement, on bouge 2 bateaux vers la destination
     for (i = 0; i < currentState[0].length; i++) {
         // On ne déplace pas 2 fois le même bateau, et on ne déplace pas 2 fois le même set de bateaux
-        for (j = i + 1; j < objState[0].length; j++) {
+        for (j = i + 1; j < currentState[0].length; j++) {
             newState = clone(currentState);
             newState.previous = currentState;
 
+            // Calcul du coût réel
             newState.cost = Math.max(newState[0][i].speed, newState[0][j].speed) + currentState.cost;
 
             newState[1].push(newState[0][i]);
@@ -129,6 +150,8 @@ function transform(state) {
             // On s'assure que on bouge toujours l'indice le plus haut en premier,
             newState[0].splice(j, 1);
             newState[0].splice(i, 1);
+
+            newState.cost+= h_cost(newState);
 
             // Puis, si on a pas l'état final, on ramène 1 bateau afin de servir d'escorte pour les prochains
             if (!(isTarget(newState))) {
@@ -160,19 +183,20 @@ function transform(state) {
 // ########################  MAIN ########################  //
 // #########  Approche informée - Algorithme A*  ######### //
 
-while (currentState[1].length() <= 4) {
+while (currentState[0].length >0 ) {
+    represent(currentState);
     neighboursStates = clone(transform(currentState));
-    for (let i = 0; i < neighboursStates.length(); i++) {
-        for (let j = 0; j < closed.length(); i++) {
-            if (neighboursStates[i] == closed[j]) { //Faire une fonction isEqual
+    for (let i = 0; i < neighboursStates.length; i++) {
+        for (let j = 0; j < closed.length; i++) {
+            if (neighboursStates[i] === closed[j]) {
                 // On enlève un état si il fait déjà parti de la liste fermée
                 neighboursStates.splice(i, 1);
             }
         }
 
-        for (let j = 0; j < opened.length(); i++) {
-            if (neighboursStates[i] == opened[j]) { //Faire une fonction isEqual
-                //Si un noeud voisin est déjà dans la liste ouverte et que son coût(f+h) est meilleur, on le met à jour
+        for (let j = 0; j < opened.length; i++) {
+            if (neighboursStates[i] === opened[j]) {
+                //Si un noeud voisin est déjà dans la liste ouverte et que son coût(f+h) est meilleur, on met à jour son prédécesseur
                 opened[j] = clone(neighboursStates [i]);
             }
             else {
@@ -191,9 +215,8 @@ while (currentState[1].length() <= 4) {
         //Ca ne devrait jamais arriver car le graphe n'est pas coupé, mais sait-on jamais...
         console.log("ERREUR : L'algorithme n'a pas de solution");
     }
-
 }
-
+console.log("Le coût total est de :" + currentState.cost);
 // ########## TESTS DIVERS VERS ########## //
 
 // let State1 = {};
