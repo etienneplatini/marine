@@ -1,5 +1,5 @@
 ////////// INITIALISATION DU CHRONOMETRE \\\\\\\\\\
-console.time("Temps écoulé ");
+console.time("Temps d'exécution ");
 
 
 ////////// FONCTIONS \\\\\\\\\\
@@ -203,7 +203,7 @@ while(queue.length > 0){
         console.log("Déplacements des batiments :");
         console.log(path);
         console.log("Durée du déplacement : " + currentState.cost + "mn");
-        console.timeEnd("Temps écoulé ");
+        console.timeEnd("Temps d'exécution ");
         break;
     }
 
