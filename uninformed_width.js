@@ -12,7 +12,7 @@ function clone(obj){
     return copy;
 }
 
-// Fonction evaluant si l'etat est la cible
+// Fonction evaluant si l'etat est la cible en vérifiant la longueur de la cible.
 function isTarget(state){
     return state[1].length === NBBOATS;
 }
@@ -32,13 +32,13 @@ function isEqualAndSlower(state1, state2){
         sum2 += state2[0][i].speed;
     }
 
-    // Si les dispositions sont identiques et le cout de state2 supérieur ou égal, on retourne vrai
+    // Si les dispositions sont identiques et le coût de state2 supérieur ou égal, on retourne vrai et on le rajoute à la queue
     return sum1 === sum2 && state2.cost >= state1.cost;
 
 }
 
-// Fonction retournant vrai si l'état a été visité
-// Rappel : un état est considéré comme visité ssi cette disposition est deja dans queue ET le cout de la disposition dans queue est inférieur ou égal au cout de l'état paramètre
+// Fonction retournant vrai si l'état a déjà été visité
+// Rappel : un état est considéré comme visité ssi cette disposition est déjà dans queue ET le cout de la disposition dans la queue est inférieur ou égal au coût de l'état paramètre
 function isVisited(state){
     let i;
     for(i=0; i< visited.length; i++){
@@ -53,17 +53,19 @@ function isVisited(state){
 function represent(state){
     let i;
     let name = "\n";
-
+    // On ajoute le premier tableau
     for (i = 0; i < state[0].length; i++ ) {
         name += state[0][i].speed + " ";
     }
 
     name += "\n-----\n";
 
+    //On ajoute le second tableau
     for ( i = 0; i < state[1].length; i++ ) {
         name += state[1][i].speed + " ";
     }
 
+    //On ajoute le bateau de sécurité qui a été bougé
     name += state.movedBack;
     name += "\n";
 
@@ -79,11 +81,12 @@ function returnPath(state) {
     if(state.previous != null){
         path += returnPath(state.previous);
     }
+    //On affiche le chemin qui nous mènent à la solution
     path += represent(state);
     return path;
 }
 
-// Fonction retournant un tableau contenant tous les etats possibles depuis un etat
+//Fonction retournant un tableau contenant tous les etats possibles depuis un etat courant
 function transform(state){
 
     let i;
@@ -91,7 +94,6 @@ function transform(state){
     let k;
 
     let ArrNewStates = [];
-
     let newState = {};
     let buffFinalState = {};
 
@@ -99,9 +101,11 @@ function transform(state){
     for(i=0; i < state[0].length; i++){
         // On ne déplace pas 2 fois le même bateau, et on ne déplace pas 2 fois le même set de bateaux
         for(j=i+1; j < state[0].length; j++){
+
             newState = clone(state);
             newState.previous = state;
 
+            //Le coût du déplacement est conditionné par le bateau le plus lent, et on le rajoute au coût total.
             newState.cost = Math.max(newState[0][i].speed, newState[0][j].speed) + state.cost;
 
             newState[1].push(newState[0][i]);
@@ -117,11 +121,11 @@ function transform(state){
 
                     buffFinalState = clone(newState);
 
-                    // On récupère le nom du bateau qui a été ramené avec l'escorte
+                    // On récupère le nom du bateau qui a été ramené avec l'escorte et on ajoute son coût au coût total
                     buffFinalState.movedBack = "(" + buffFinalState[1][k].speed + ")";
-
                     buffFinalState.cost += buffFinalState[1][k].speed;
 
+                    //On le fait revenir au port de départ
                     buffFinalState[0].push(buffFinalState[1][k]);
                     buffFinalState[1].splice(k, 1);
 
@@ -140,7 +144,6 @@ function transform(state){
 
         }
     }
-
     return ArrNewStates;
 }
 
@@ -183,13 +186,14 @@ let nodeVisited = 0;
 
 while(queue.length > 0){
 
-    // Dans queue[0] se trouve l'état initial, puis ensuite l'état ayant le cout le plus faible donc celui à étudier
+    // Dans queue[0] se trouve l'état initial, suivit de l'état ayant le cout le plus faible, celui à étudier
     currentState = clone(queue[0]);
     nextStates = transform(currentState);
 
     // On ajoute les états suivants découverts à la queue, et on la trie par cout des états
     queue = queue.concat(nextStates);
 
+    //Si l'état visité est une solution, on l'ajoute au tableau des solutions que l'on triera plus tard
     if(isTarget(currentState)){
         arrTargets.push(clone(currentState));
     }
@@ -199,9 +203,10 @@ while(queue.length > 0){
     nodeVisited ++;
 }
 
+//On trie le tableau des résultats du coût le plus faible au coût le plus fort pour en sortir le premier résultat comme solution
 arrTargets.sort(function(a, b){return a.cost - b.cost});
-
 let path = returnPath(arrTargets[0]);
+
 console.log("Déplacements des batiments :");
 console.log(path);
 console.log("Durée du déplacement : " + arrTargets[0].cost + "mn");
