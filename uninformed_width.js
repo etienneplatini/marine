@@ -1,7 +1,3 @@
-////////// INITIALISATION DU CHRONOMETRE \\\\\\\\\\
-console.time("Temps d'exécution ");
-
-
 ////////// FONCTIONS \\\\\\\\\\
 
 // Fonction permettant de faire des copies profondes en javascript
@@ -180,6 +176,7 @@ let visited = [];
 let queue = [currentState];
 let nextStates = [];
 let arrTargets = [];
+let nodeVisited = 0;
 
 
 //////////     MAIN     \\\\\\\\\\
@@ -199,6 +196,7 @@ while(queue.length > 0){
 
     // Si l'etat actuel n'est pas l'état cible, on le retire de la queue (c'est celui qui a le cout le plus bas, soit queue[0])
     queue.shift();
+    nodeVisited ++;
 }
 
 arrTargets.sort(function(a, b){return a.cost - b.cost});
@@ -207,4 +205,4 @@ let path = returnPath(arrTargets[0]);
 console.log("Déplacements des batiments :");
 console.log(path);
 console.log("Durée du déplacement : " + arrTargets[0].cost + "mn");
-console.timeEnd("Temps d'exécution ");
+console.log("Nombre de noeuds visités : " + nodeVisited);

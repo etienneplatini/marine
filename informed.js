@@ -1,7 +1,3 @@
-////////// INITIALISATION DU CHRONOMETRE \\\\\\\\\\
-console.time("Temps d'exécution ");
-
-
 ////////// FONCTIONS \\\\\\\\\\
 
 // Fonction permettant de faire des copies   profondes en javascript
@@ -177,7 +173,7 @@ function h(state){
     return hCost;
     */
 
-    /*
+/*
     for(let i = 0; i < state[0].length; i++){
         hCost += state[0][i].speed;
 
@@ -189,7 +185,7 @@ function h(state){
 
 ////////// VARIABLES \\\\\\\\\\
 
-const NBBOATS = 6;
+const NBBOATS = 4;
 
 // Representation
 let XC21 = {};
@@ -211,7 +207,7 @@ XC6000.speed = 1500;
 
 // Etat actuel initialisé à l'état source
 let currentState = {};
-currentState[0] = [XC800, XC21, XC56, XC100, XC1000, XC2000];
+currentState[0] = [XC21, XC56, XC100, XC800];
 currentState[1] = [];
 currentState.gCost = 0;
 currentState.hCost = 0;
@@ -223,6 +219,7 @@ currentState.movedBack = "";
 let visited = [];
 let queue = [currentState];
 let nextStates = [];
+let nodeVisited = 0;
 
 
 //////////     MAIN     \\\\\\\\\\
@@ -242,10 +239,11 @@ while(queue.length > 0){
         console.log("Déplacements des batiments :");
         console.log(path);
         console.log("Durée du déplacement : " + currentState.gCost + "mn");
-        console.timeEnd("Temps d'exécution ");
+        console.log("Nombre de noeuds visités : " + nodeVisited);
         break;
     }
 
     // Si l'etat actuel n'est pas l'état cible, on le retire de la queue (c'est celui qui a le cout le plus bas, soit queue[0])
     queue.shift();
+    nodeVisited ++;
 }

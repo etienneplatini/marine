@@ -1,7 +1,3 @@
-////////// INITIALISATION DU CHRONOMETRE \\\\\\\\\\
-console.time("Temps d'exécution ");
-
-
 ////////// FONCTIONS \\\\\\\\\\
 
 // Fonction permettant de faire des copies profondes en javascript
@@ -163,7 +159,7 @@ XC2000.speed = 780;
 
 // Etat actuel initialisé à l'état source
 let currentState = {};
-currentState[0] = [XC800 ,XC21, XC56, XC100];
+currentState[0] = [XC21, XC56, XC100, XC800];
 currentState[1] = [];
 currentState.cost = 0;
 currentState.previous = null;
@@ -173,6 +169,7 @@ currentState.movedBack = "";
 let visited = [];
 let queue = [currentState];
 let nextStates = [];
+let nodeVisited = 0;
 
 
 //////////     MAIN     \\\\\\\\\\
@@ -192,10 +189,11 @@ while(queue.length > 0){
         console.log("Déplacements des batiments :");
         console.log(path);
         console.log("Durée du déplacement : " + currentState.cost + "mn");
-        console.timeEnd("Temps d'exécution ");
+        console.log("Nombre de noeuds visités : " + nodeVisited);
         break;
     }
 
     // Si l'etat actuel n'est pas l'état cible, on le retire de la queue (c'est celui qui a le cout le plus bas, soit queue[0])
     queue.shift();
+    nodeVisited ++;
 }
