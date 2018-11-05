@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="766b9909-61ca-4663-b684-db7d2ce3e3fa" name="Default" comment="fix : compteur de temps remplacé par compteur de noeuds">
-      <change beforePath="$PROJECT_DIR$/uninformed_width.js" beforeDir="false" afterPath="$PROJECT_DIR$/uninformed_width.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/informed.js" beforeDir="false" afterPath="$PROJECT_DIR$/informed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uninformed_dijkstra.js" beforeDir="false" afterPath="$PROJECT_DIR$/uninformed_dijkstra.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -78,13 +80,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="754" />
+          <entry key="js" value="1308" />
           <entry key="txt" value="147" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="754" />
+          <entry key="JavaScript" value="1308" />
           <entry key="PLAIN_TEXT" value="147" />
         </counts>
       </usages-collector>
@@ -101,21 +103,17 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/informed_mat.js">
+        <entry file="file://$PROJECT_DIR$/uninformed_width.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="195" lean-forward="true" selection-start-line="195" selection-end-line="195" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/informed.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4048">
-              <caret line="191" column="30" selection-start-line="191" selection-start-column="30" selection-end-line="191" selection-end-column="30" />
+            <state relative-caret-position="-161">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
               <folding>
-                <element signature="e#4536#4788#0" />
+                <element signature="e#119#312#0" />
+                <element signature="e#420#463#0" />
+                <element signature="e#673#1162#0" />
+                <element signature="e#1427#1587#0" />
+                <element signature="e#1664#2102#0" />
+                <element signature="e#2193#2443#0" />
               </folding>
             </state>
           </provider>
@@ -124,17 +122,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uninformed_dijkstra.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-597">
-              <caret line="150" column="16" lean-forward="true" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="16" />
+            <state relative-caret-position="247">
+              <caret line="164" column="47" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="47" />
+              <folding>
+                <element signature="n#!!block;n#clone#0" />
+                <element signature="n#!!block;n#isTarget#0" />
+                <element signature="n#!!block;n#isEqualAndSlower#0" />
+                <element signature="n#!!block;n#isVisited#0" />
+                <element signature="n#!!block;n#represent#0" />
+                <element signature="n#!!block;n#returnPath#0" />
+                <element signature="n#!!block;n#transform#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/uninformed_width.js">
+        <entry file="file://$PROJECT_DIR$/informed.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
+            <state relative-caret-position="345">
+              <caret line="175" column="33" selection-start-line="175" selection-start-column="33" selection-end-line="175" selection-end-column="33" />
+              <folding>
+                <element signature="e#121#314#0" />
+                <element signature="e#384#427#0" />
+                <element signature="e#637#1098#0" />
+                <element signature="e#1355#1515#0" />
+                <element signature="e#1592#1971#0" />
+                <element signature="e#2062#2255#0" />
+                <element signature="e#2366#4493#0" />
+                <element signature="e#4536#5298#0" />
+                <element signature="e#5814#6691#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -157,9 +175,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/informed.js" />
-        <option value="$PROJECT_DIR$/uninformed_dijkstra.js" />
         <option value="$PROJECT_DIR$/uninformed_width.js" />
+        <option value="$PROJECT_DIR$/uninformed_dijkstra.js" />
+        <option value="$PROJECT_DIR$/informed.js" />
       </list>
     </option>
   </component>
@@ -193,10 +211,26 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="marine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="marine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,7 +242,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -311,26 +344,26 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54153000" />
+    <option name="totallyTimeSpent" value="54810000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.018967334" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2897787" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49420443" visible="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49367756" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49683878" weight="0.4889868" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49947312" weight="0.0" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49736565" weight="0.32911393" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5057956" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50632244" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4978678" weight="0.32977587" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32929516" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -382,27 +415,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/uninformed_width.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+          <folding>
+            <element signature="e#119#312#0" />
+            <element signature="e#420#463#0" />
+            <element signature="e#673#1162#0" />
+            <element signature="e#1427#1587#0" />
+            <element signature="e#1664#2102#0" />
+            <element signature="e#2193#2443#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/uninformed_dijkstra.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-597">
-          <caret line="150" column="16" lean-forward="true" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="16" />
+        <state relative-caret-position="247">
+          <caret line="164" column="47" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!block;n#clone#0" />
+            <element signature="n#!!block;n#isTarget#0" />
+            <element signature="n#!!block;n#isEqualAndSlower#0" />
+            <element signature="n#!!block;n#isVisited#0" />
+            <element signature="n#!!block;n#represent#0" />
+            <element signature="n#!!block;n#returnPath#0" />
+            <element signature="n#!!block;n#transform#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/informed.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4048">
-          <caret line="191" column="30" selection-start-line="191" selection-start-column="30" selection-end-line="191" selection-end-column="30" />
+        <state relative-caret-position="345">
+          <caret line="175" column="33" selection-start-line="175" selection-start-column="33" selection-end-line="175" selection-end-column="33" />
           <folding>
-            <element signature="e#4536#4788#0" />
+            <element signature="e#121#314#0" />
+            <element signature="e#384#427#0" />
+            <element signature="e#637#1098#0" />
+            <element signature="e#1355#1515#0" />
+            <element signature="e#1592#1971#0" />
+            <element signature="e#2062#2255#0" />
+            <element signature="e#2366#4493#0" />
+            <element signature="e#4536#5298#0" />
+            <element signature="e#5814#6691#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/uninformed_width.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="208" lean-forward="true" selection-start-line="208" selection-end-line="208" />
         </state>
       </provider>
     </entry>
