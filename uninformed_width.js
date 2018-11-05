@@ -147,7 +147,7 @@ function transform(state){
 
 ////////// VARIABLES \\\\\\\\\\
 
-const NBBOATS = 5;
+const NBBOATS = 4;
 
 // Representation
 let XC21 = {};
@@ -165,7 +165,7 @@ XC2000.speed = 780;
 
 // Etat actuel initialisé à l'état source
 let currentState = {};
-currentState[0] = [XC800, XC21, XC56, XC100, XC800];
+currentState[0] = [XC800, XC21, XC56, XC100];
 currentState[1] = [];
 currentState.cost = 0;
 currentState.previous = null;

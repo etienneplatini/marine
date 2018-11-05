@@ -150,7 +150,6 @@ function transform(state){
 function h(state){
     let hCost = 0;
 
-
     if(state[0].length > 0){
         let arrSpeed = [];
 
@@ -159,33 +158,16 @@ function h(state){
 
         }
 
-        hCost = Math.max(...arrSpeed);
-        return hCost;
+        hCost += Math.max(...arrSpeed);
 
     }
-    else{
-        return hCost;
-    }
-
-
-    /*
-    hCost = state[0].length;
-    return hCost;
-    */
-
-/*
-    for(let i = 0; i < state[0].length; i++){
-        hCost += state[0][i].speed;
-
-    }*/
-
     return hCost;
 }
 
 
 ////////// VARIABLES \\\\\\\\\\
 
-const NBBOATS = 4;
+const NBBOATS = 4 ;
 
 // Representation
 let XC21 = {};
@@ -207,7 +189,7 @@ XC6000.speed = 1500;
 
 // Etat actuel initialisé à l'état source
 let currentState = {};
-currentState[0] = [XC21, XC56, XC100, XC800];
+currentState[0] = [XC21, XC56, XC100 ,XC800];
 currentState[1] = [];
 currentState.gCost = 0;
 currentState.hCost = 0;
