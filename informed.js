@@ -56,6 +56,9 @@ function isVisited(state){
 // Fonction de représentation graphique d'un état
 function represent(state){
     let name = "\n";
+    name += "fCost : ";
+    name += state.fCost;
+    name += "\n";
     let i;
 
     for (i = 0; i < state[0].length; i++ ) {
@@ -151,6 +154,7 @@ function transform(state){
 function h(state){
     let hCost = 0;
 
+
     if(state[0].length > 0){
         let arrSpeed = [];
 
@@ -166,12 +170,26 @@ function h(state){
     else{
         return hCost;
     }
+
+
+    /*
+    hCost = state[0].length;
+    return hCost;
+    */
+
+    /*
+    for(let i = 0; i < state[0].length; i++){
+        hCost += state[0][i].speed;
+
+    }*/
+
+    return hCost;
 }
 
 
 ////////// VARIABLES \\\\\\\\\\
 
-const NBBOATS = 4;
+const NBBOATS = 6;
 
 // Representation
 let XC21 = {};
@@ -180,20 +198,24 @@ let XC100 = {};
 let XC800 = {};
 let XC1000 = {};
 let XC2000 = {};
+let XC5000 = {};
+let XC6000 = {};
 XC21.speed = 45;
 XC56.speed = 90;
 XC100.speed = 255;
 XC800.speed = 360;
 XC1000.speed = 500;
 XC2000.speed = 780;
+XC5000.speed = 1000;
+XC6000.speed = 1500;
 
 // Etat actuel initialisé à l'état source
 let currentState = {};
-currentState[0] = [XC21, XC56, XC100, XC800];
+currentState[0] = [XC800, XC21, XC56, XC100, XC1000, XC2000];
 currentState[1] = [];
 currentState.gCost = 0;
 currentState.hCost = 0;
-currentState.fCost = 0;
+currentState.fCost = h(currentState);
 currentState.previous = null;
 currentState.movedBack = "";
 

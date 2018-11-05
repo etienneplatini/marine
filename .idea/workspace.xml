@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="766b9909-61ca-4663-b684-db7d2ce3e3fa" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/informed.js" beforeDir="false" afterPath="$PROJECT_DIR$/informed_mat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/informed.js" beforeDir="false" afterPath="$PROJECT_DIR$/informed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uninformed_dijkstra.js" beforeDir="false" afterPath="$PROJECT_DIR$/uninformed_dijkstra.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uninformed_width.js" beforeDir="false" afterPath="$PROJECT_DIR$/uninformed_width.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -66,32 +68,94 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="51179013">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="js" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JavaScript" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="379" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JavaScript" value="379" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/informed_mat.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/uninformed_dijkstra.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-414">
-              <caret line="185" column="29" selection-start-line="185" selection-start-column="23" selection-end-line="185" selection-end-column="29" />
+            <state relative-caret-position="1150">
+              <caret line="165" column="43" selection-start-line="165" selection-start-column="43" selection-end-line="165" selection-end-column="43" />
               <folding>
-                <element signature="e#885#1294#0" />
-                <element signature="e#1328#1789#0" />
-                <element signature="e#1880#2501#0" />
-                <element signature="e#2729#2978#0" />
-                <element signature="e#3065#3247#0" />
-                <element signature="e#3317#3421#0" />
-                <element signature="e#3517#5431#0" />
+                <element signature="n#!!block;n#clone#0" />
+                <element signature="n#!!block;n#isTarget#0" />
+                <element signature="n#!!block;n#isEqualAndSlower#0" />
+                <element signature="n#!!block;n#isVisited#0" />
+                <element signature="n#!!block;n#represent#0" />
+                <element signature="n#!!block;n#returnPath#0" />
+                <element signature="n#!!block;n#transform#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/uninformed1.js">
+        <entry file="file://$PROJECT_DIR$/uninformed_width.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1771">
-              <caret line="77" column="1" selection-start-line="61" selection-end-line="77" selection-end-column="1" />
+              <caret line="196" column="45" lean-forward="true" selection-start-line="196" selection-start-column="45" selection-end-line="196" selection-end-column="45" />
+              <folding>
+                <element signature="e#209#402#0" />
+                <element signature="e#725#1186#0" />
+                <element signature="e#1443#1603#0" />
+                <element signature="e#1680#1995#0" />
+                <element signature="e#2086#2279#0" />
+                <element signature="e#2390#4361#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/informed.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="156" column="4" lean-forward="true" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="4" />
+              <folding>
+                <element signature="e#211#404#0" />
+                <element signature="e#474#517#0" />
+                <element signature="e#727#1188#0" />
+                <element signature="e#1445#1605#0" />
+                <element signature="e#2085#2278#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/informed_mat.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-83">
+              <caret line="99" column="31" lean-forward="true" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -114,6 +178,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/uninformed_dijkstra.js" />
+        <option value="$PROJECT_DIR$/uninformed_width.js" />
         <option value="$PROJECT_DIR$/informed.js" />
       </list>
     </option>
@@ -125,11 +191,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="217" />
-    <option name="y" value="72" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -147,21 +212,25 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="marine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="marine" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -180,8 +249,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.informed.js">
+  <component name="RunManager" selected="Node.js.uninformed_width.js">
     <configuration name="Unnamed" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="C:/Program Files/nodejs/node" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="informed.js (1)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="informed.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="informed.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-js-file="$PROJECT_DIR$/informed_mat.js" working-dir="$PROJECT_DIR$">
@@ -190,13 +262,25 @@
     <configuration name="uninformed1.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="C:/Program Files/nodejs/node" path-to-js-file="uninformed1.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="uninformed_dijkstra.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="uninformed_dijkstra.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="uninformed_width.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="uninformed_width.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Node.js.Unnamed" />
       <item itemvalue="Node.js.informed.js" />
       <item itemvalue="Node.js.uninformed1.js" />
+      <item itemvalue="Node.js.informed.js (1)" />
+      <item itemvalue="Node.js.uninformed_width.js" />
+      <item itemvalue="Node.js.uninformed_dijkstra.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.uninformed_width.js" />
+        <item itemvalue="Node.js.informed.js (1)" />
+        <item itemvalue="Node.js.uninformed_dijkstra.js" />
         <item itemvalue="Node.js.informed.js" />
         <item itemvalue="Node.js.uninformed1.js" />
       </list>
@@ -220,6 +304,7 @@
       <workItem from="1541253800273" duration="1179000" />
       <workItem from="1541256095086" duration="7714000" />
       <workItem from="1541331913306" duration="4045000" />
+      <workItem from="1541404272771" duration="2560000" />
     </task>
     <task id="LOCAL-00001" summary="[INFORMED] Commit I&#10;- Création du main (A*) et concepts généraux&#10;- Tweaks du transform et du represent&#10;&#10;To do :&#10;- Ligne 134: Ajouter un &amp;&amp; pour vérifier si le nouveau coût est inférieur à l'ancien.&#10;- Implémenter l'heuristique et le merge avec le coût total dans transform()&#10;- Débug et tests unitaires">
       <created>1541191118672</created>
@@ -232,26 +317,28 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29534000" />
+    <option name="totallyTimeSpent" value="38499000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.50641024" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49841937" weight="0.32911393" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978904" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4957265" visible="true" weight="0.41490546" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49789253" weight="0.4889868" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49736565" visible="true" weight="0.32911393" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50263435" side_tool="true" visible="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49736565" weight="0.32911393" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50427353" side_tool="true" visible="true" weight="0.41490546" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4978678" weight="0.32977587" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32929516" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -269,26 +356,56 @@
     <option name="LAST_COMMIT_MESSAGE" value="[INFORMED] Commit I&#10;- Création du main (A*) et concepts généraux&#10;- Tweaks du transform et du represent&#10;&#10;To do :&#10;- Implémenter l'heuristique dans transform()&#10;- Débug et tests unitaires" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/informed_mat.js">
+    <entry file="file://$PROJECT_DIR$/uninformed1.js" />
+    <entry file="file://$PROJECT_DIR$/uninformed_dijkstra.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-414">
-          <caret line="185" column="29" selection-start-line="185" selection-start-column="23" selection-end-line="185" selection-end-column="29" />
+        <state relative-caret-position="1150">
+          <caret line="165" column="43" selection-start-line="165" selection-start-column="43" selection-end-line="165" selection-end-column="43" />
           <folding>
-            <element signature="e#885#1294#0" />
-            <element signature="e#1328#1789#0" />
-            <element signature="e#1880#2501#0" />
-            <element signature="e#2729#2978#0" />
-            <element signature="e#3065#3247#0" />
-            <element signature="e#3317#3421#0" />
-            <element signature="e#3517#5431#0" />
+            <element signature="n#!!block;n#clone#0" />
+            <element signature="n#!!block;n#isTarget#0" />
+            <element signature="n#!!block;n#isEqualAndSlower#0" />
+            <element signature="n#!!block;n#isVisited#0" />
+            <element signature="n#!!block;n#represent#0" />
+            <element signature="n#!!block;n#returnPath#0" />
+            <element signature="n#!!block;n#transform#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uninformed1.js">
+    <entry file="file://$PROJECT_DIR$/uninformed_width.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1771">
-          <caret line="77" column="1" selection-start-line="61" selection-end-line="77" selection-end-column="1" />
+          <caret line="196" column="45" lean-forward="true" selection-start-line="196" selection-start-column="45" selection-end-line="196" selection-end-column="45" />
+          <folding>
+            <element signature="e#209#402#0" />
+            <element signature="e#725#1186#0" />
+            <element signature="e#1443#1603#0" />
+            <element signature="e#1680#1995#0" />
+            <element signature="e#2086#2279#0" />
+            <element signature="e#2390#4361#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informed_mat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-83">
+          <caret line="99" column="31" lean-forward="true" selection-start-line="99" selection-start-column="31" selection-end-line="99" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/informed.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="156" column="4" lean-forward="true" selection-start-line="156" selection-start-column="4" selection-end-line="156" selection-end-column="4" />
+          <folding>
+            <element signature="e#211#404#0" />
+            <element signature="e#474#517#0" />
+            <element signature="e#727#1188#0" />
+            <element signature="e#1445#1605#0" />
+            <element signature="e#2085#2278#0" />
+          </folding>
         </state>
       </provider>
     </entry>

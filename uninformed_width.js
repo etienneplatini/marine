@@ -151,7 +151,7 @@ function transform(state){
 
 ////////// VARIABLES \\\\\\\\\\
 
-const NBBOATS = 4;
+const NBBOATS = 5;
 
 // Representation
 let XC21 = {};
@@ -169,7 +169,7 @@ XC2000.speed = 780;
 
 // Etat actuel initialisé à l'état source
 let currentState = {};
-currentState[0] = [XC21, XC56, XC100, XC800];
+currentState[0] = [XC800, XC21, XC56, XC100, XC800];
 currentState[1] = [];
 currentState.cost = 0;
 currentState.previous = null;
@@ -179,6 +179,7 @@ currentState.movedBack = "";
 let visited = [];
 let queue = [currentState];
 let nextStates = [];
+let arrTargets = [];
 
 
 //////////     MAIN     \\\\\\\\\\
@@ -193,14 +194,17 @@ while(queue.length > 0){
     queue = queue.concat(nextStates);
 
     if(isTarget(currentState)){
-        let path = returnPath(currentState);
-        console.log("Déplacements des batiments :");
-        console.log(path);
-        console.log("Durée du déplacement : " + currentState.cost + "mn");
-        console.timeEnd("Temps d'exécution ");
-        break;
+        arrTargets.push(clone(currentState));
     }
 
     // Si l'etat actuel n'est pas l'état cible, on le retire de la queue (c'est celui qui a le cout le plus bas, soit queue[0])
     queue.shift();
 }
+
+arrTargets.sort(function(a, b){return a.cost - b.cost});
+
+let path = returnPath(arrTargets[0]);
+console.log("Déplacements des batiments :");
+console.log(path);
+console.log("Durée du déplacement : " + arrTargets[0].cost + "mn");
+console.timeEnd("Temps d'exécution ");
