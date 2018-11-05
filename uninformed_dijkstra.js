@@ -154,14 +154,9 @@ let nodeVisited = 0;
 //////////     MAIN     \\\\\\\\\\
 
 while(queue.length > 0){
+    nodeVisited ++;
 
     currentState = clone(queue[0]);
-    nextStates = transform(currentState);
-
-    queue = queue.concat(nextStates);
-    // On trie la queue par ordre croissant afin de toujours visiter en premier les états au cout le plus faible
-    queue.sort(function(a, b){return a.cost - b.cost});
-
     // Si l'état trouvé est la soltion, on affiche le résultat et le chemin pour y parvenir
     if(isTarget(currentState)){
         let path = returnPath(currentState);
@@ -171,7 +166,11 @@ while(queue.length > 0){
         console.log("Nombre de noeuds visités : " + nodeVisited);
         break;
     }
+    nextStates = transform(currentState);
+
+    queue = queue.concat(nextStates);
+    // On trie la queue par ordre croissant afin de toujours visiter en premier les états au cout le plus faible
+    queue.sort(function(a, b){return a.cost - b.cost});
 
     queue.shift();
-    nodeVisited ++;
 }

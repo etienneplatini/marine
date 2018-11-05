@@ -185,22 +185,23 @@ let nodeVisited = 0;
 //////////     MAIN     \\\\\\\\\\
 
 while(queue.length > 0){
+    nodeVisited ++;
 
     // Dans queue[0] se trouve l'état initial, suivit de l'état ayant le cout le plus faible, celui à étudier
     currentState = clone(queue[0]);
+    //Si l'état visité est une solution, on l'ajoute au tableau des solutions que l'on triera plus tard
+    if(isTarget(currentState)){
+        arrTargets.push(clone(currentState));
+    }
     nextStates = transform(currentState);
 
     // On ajoute les états suivants découverts à la queue, et on la trie par cout des états
     queue = queue.concat(nextStates);
 
-    //Si l'état visité est une solution, on l'ajoute au tableau des solutions que l'on triera plus tard
-    if(isTarget(currentState)){
-        arrTargets.push(clone(currentState));
-    }
+
 
     // Si l'etat actuel n'est pas l'état cible, on le retire de la queue (c'est celui qui a le cout le plus bas, soit queue[0])
     queue.shift();
-    nodeVisited ++;
 }
 
 //On trie le tableau des résultats du coût le plus faible au coût le plus fort pour en sortir le premier résultat comme solution

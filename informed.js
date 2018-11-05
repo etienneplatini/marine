@@ -189,12 +189,9 @@ let nodeVisited = 0;
 //////////     MAIN     \\\\\\\\\\
 
 while(queue.length > 0){
+    nodeVisited ++;
 
     currentState = clone(queue[0]);
-    nextStates = transform(currentState);
-
-    queue = queue.concat(nextStates);
-    queue.sort(function(a, b){return a.fCost - b.fCost});
 
     if(isTarget(currentState)){
         let path = returnPath(currentState);
@@ -205,6 +202,10 @@ while(queue.length > 0){
         break;
     }
 
+    nextStates = transform(currentState);
+
+    queue = queue.concat(nextStates);
+    queue.sort(function(a, b){return a.fCost - b.fCost});
+
     queue.shift();
-    nodeVisited ++;
 }

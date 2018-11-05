@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="766b9909-61ca-4663-b684-db7d2ce3e3fa" name="Default" comment="fix : compteur de temps remplacé par compteur de noeuds">
+    <list default="true" id="766b9909-61ca-4663-b684-db7d2ce3e3fa" name="Default" comment="final">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/informed.js" beforeDir="false" afterPath="$PROJECT_DIR$/informed.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uninformed_dijkstra.js" beforeDir="false" afterPath="$PROJECT_DIR$/uninformed_dijkstra.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uninformed_width.js" beforeDir="false" afterPath="$PROJECT_DIR$/uninformed_width.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -80,33 +81,33 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1308" />
-          <entry key="txt" value="147" />
+          <entry key="js" value="1335" />
+          <entry key="txt" value="152" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="1308" />
-          <entry key="PLAIN_TEXT" value="147" />
+          <entry key="JavaScript" value="1335" />
+          <entry key="PLAIN_TEXT" value="152" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.6" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/uninformed_width.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-161">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="152">
+              <caret line="186" column="24" selection-start-line="186" selection-start-column="24" selection-end-line="186" selection-end-column="24" />
               <folding>
                 <element signature="e#119#312#0" />
                 <element signature="e#420#463#0" />
@@ -122,8 +123,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uninformed_dijkstra.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="164" column="47" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="47" />
+            <state relative-caret-position="40">
+              <caret line="155" column="24" selection-start-line="155" selection-start-column="24" selection-end-line="155" selection-end-column="24" />
               <folding>
                 <element signature="n#!!block;n#clone#0" />
                 <element signature="n#!!block;n#isTarget#0" />
@@ -137,22 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/informed.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="175" column="33" selection-start-line="175" selection-start-column="33" selection-end-line="175" selection-end-column="33" />
-              <folding>
-                <element signature="e#121#314#0" />
-                <element signature="e#384#427#0" />
-                <element signature="e#637#1098#0" />
-                <element signature="e#1355#1515#0" />
-                <element signature="e#1592#1971#0" />
-                <element signature="e#2062#2255#0" />
-                <element signature="e#2366#4493#0" />
-                <element signature="e#4536#5298#0" />
-                <element signature="e#5814#6691#0" />
-              </folding>
+            <state relative-caret-position="155">
+              <caret line="194" selection-start-line="194" selection-end-line="194" />
             </state>
           </provider>
         </entry>
@@ -175,9 +165,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/uninformed_width.js" />
-        <option value="$PROJECT_DIR$/uninformed_dijkstra.js" />
         <option value="$PROJECT_DIR$/informed.js" />
+        <option value="$PROJECT_DIR$/uninformed_dijkstra.js" />
+        <option value="$PROJECT_DIR$/uninformed_width.js" />
       </list>
     </option>
   </component>
@@ -211,38 +201,10 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="marine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="marine" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name=".idea" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="marine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="marine" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -318,6 +280,7 @@
       <workItem from="1541331913306" duration="4045000" />
       <workItem from="1541404272771" duration="9360000" />
       <workItem from="1541425556846" duration="6887000" />
+      <workItem from="1541449295275" duration="560000" />
     </task>
     <task id="LOCAL-00001" summary="[INFORMED] Commit I&#10;- Création du main (A*) et concepts généraux&#10;- Tweaks du transform et du represent&#10;&#10;To do :&#10;- Ligne 134: Ajouter un &amp;&amp; pour vérifier si le nouveau coût est inférieur à l'ancien.&#10;- Implémenter l'heuristique et le merge avec le coût total dans transform()&#10;- Débug et tests unitaires">
       <created>1541191118672</created>
@@ -340,11 +303,18 @@
       <option name="project" value="LOCAL" />
       <updated>1541418188194</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="final">
+      <created>1541440406015</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1541440406015</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54810000" />
+    <option name="totallyTimeSpent" value="55439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -404,7 +374,8 @@
     <MESSAGE value="[INFORMED] Commit I&#10;- Création du main (A*) et concepts généraux&#10;- Tweaks du transform et du represent&#10;&#10;To do :&#10;- Implémenter l'heuristique dans transform()&#10;- Débug et tests unitaires" />
     <MESSAGE value="fix : initialisation de fcost à hcost&#10;feat : 3 fonctions heuristiques différentes" />
     <MESSAGE value="fix : compteur de temps remplacé par compteur de noeuds" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix : compteur de temps remplacé par compteur de noeuds" />
+    <MESSAGE value="final" />
+    <option name="LAST_COMMIT_MESSAGE" value="final" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/uninformed1.js" />
@@ -415,25 +386,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uninformed_width.js">
+    <entry file="file://$PROJECT_DIR$/informed.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-          <folding>
-            <element signature="e#119#312#0" />
-            <element signature="e#420#463#0" />
-            <element signature="e#673#1162#0" />
-            <element signature="e#1427#1587#0" />
-            <element signature="e#1664#2102#0" />
-            <element signature="e#2193#2443#0" />
-          </folding>
+        <state relative-caret-position="155">
+          <caret line="194" selection-start-line="194" selection-end-line="194" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/uninformed_dijkstra.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="164" column="47" selection-start-line="164" selection-start-column="47" selection-end-line="164" selection-end-column="47" />
+        <state relative-caret-position="40">
+          <caret line="155" column="24" selection-start-line="155" selection-start-column="24" selection-end-line="155" selection-end-column="24" />
           <folding>
             <element signature="n#!!block;n#clone#0" />
             <element signature="n#!!block;n#isTarget#0" />
@@ -446,20 +409,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/informed.js">
+    <entry file="file://$PROJECT_DIR$/uninformed_width.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="175" column="33" selection-start-line="175" selection-start-column="33" selection-end-line="175" selection-end-column="33" />
+        <state relative-caret-position="152">
+          <caret line="186" column="24" selection-start-line="186" selection-start-column="24" selection-end-line="186" selection-end-column="24" />
           <folding>
-            <element signature="e#121#314#0" />
-            <element signature="e#384#427#0" />
-            <element signature="e#637#1098#0" />
-            <element signature="e#1355#1515#0" />
-            <element signature="e#1592#1971#0" />
-            <element signature="e#2062#2255#0" />
-            <element signature="e#2366#4493#0" />
-            <element signature="e#4536#5298#0" />
-            <element signature="e#5814#6691#0" />
+            <element signature="e#119#312#0" />
+            <element signature="e#420#463#0" />
+            <element signature="e#673#1162#0" />
+            <element signature="e#1427#1587#0" />
+            <element signature="e#1664#2102#0" />
+            <element signature="e#2193#2443#0" />
           </folding>
         </state>
       </provider>
